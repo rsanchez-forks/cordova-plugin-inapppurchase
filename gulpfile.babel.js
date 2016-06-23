@@ -7,7 +7,6 @@ import addsrc  from 'gulp-add-src';
 const src = './src/js/';
 const dist = './www';
 const indexAndroid = 'index-android.js';
-const polyfillsAndroid = 'polyfills-android.js';
 const indexIos = 'index-ios.js';
 const utils = 'utils.js';
 
@@ -22,7 +21,6 @@ const build = () => {
     .src([ src + utils, src + indexAndroid ])
     .pipe(plumber())
     .pipe(babel())
-    .pipe(addsrc.prepend(src + polyfillsAndroid))
     .pipe(concat(indexAndroid))
     .pipe(gulp.dest(dist));
 };
