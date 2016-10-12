@@ -72,8 +72,8 @@ import java.util.List;
  */
 public class IabHelper {
     // Is debug logging enabled?
-    boolean mDebugLog = false;
-    String mDebugTag = "IabHelper";
+    boolean mDebugLog = true;
+    String mDebugTag = "google.payments";
 
     // Can we skip the online purchase verification?
     // (Only allowed if the app is debuggable)
