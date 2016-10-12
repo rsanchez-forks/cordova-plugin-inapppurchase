@@ -323,6 +323,7 @@ public class InAppBillingV3 extends CordovaPlugin {
     }
     iabHelper.queryInventoryAsync(true, moreSkus, new IabHelper.QueryInventoryFinishedListener() {
       public void onQueryInventoryFinished(IabResult result, Inventory inventory) {
+        Log.d(TAG, result.toString());
         if (result.isFailure()) {
           callbackContext.error("Error retrieving SKU details");
           return;
@@ -339,6 +340,9 @@ public class InAppBillingV3 extends CordovaPlugin {
               detailsJson.put("price", skuDetails.getPrice());
               detailsJson.put("type", skuDetails.getType());
               response.put(detailsJson);
+              Log.d(TAG, "found sku:" + detailsJson.toString());
+            } else {
+              Log.d(TAG, "missing sku:" + sku);
             }
           }
         } catch (JSONException e) {
