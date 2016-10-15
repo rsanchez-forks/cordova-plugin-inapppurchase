@@ -519,6 +519,10 @@ public class IabHelper {
         }
         else if (resultCode == Activity.RESULT_CANCELED) {
             logDebug("Purchase canceled - Response: " + getResponseDesc(responseCode));
+            logDebug("Purchase data: " + purchaseData);
+            logDebug("Data signature: " + dataSignature);
+            logDebug("Extras: " + data.getExtras());
+            logDebug("Expected item type: " + mPurchasingItemType);
             result = new IabResult(IABHELPER_USER_CANCELLED, "User canceled.");
             if (mPurchaseListener != null) mPurchaseListener.onIabPurchaseFinished(result, null);
         }
