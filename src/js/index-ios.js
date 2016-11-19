@@ -96,6 +96,7 @@ inAppPurchase.restorePurchases = () => {
           date          : val.date,
           transactionId : val.transactionId,
           state         : val.transactionState,
+          originalTransactionId : val.originalTransactionId
         };
       });
     }

@@ -99,6 +99,7 @@
                                  @"productId": NILABLE(transaction.payment.productIdentifier),
                                  @"date": NILABLE(transactionDateString),
                                  @"transactionId": NILABLE(transaction.transactionIdentifier),
+                                 @"originalTransactionId": NILABLE(transaction.originalTransaction.transactionIdentifier),
                                  @"transactionState": NILABLE([NSNumber numberWithInteger:transaction.transactionState])
                                  }];
     }
