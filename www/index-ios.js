@@ -129,7 +129,8 @@ inAppPurchase.restorePurchases = function () {
           productId: val.productId,
           date: val.date,
           transactionId: val.transactionId,
-          state: val.transactionState
+          state: val.transactionState,
+          originalTransactionId: val.originalTransactionId
         };
       });
     }
